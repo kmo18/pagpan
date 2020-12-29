@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* reset */
+@font-face { /* 3개 이상 사용하는 것을 권장 하지 않는다. */
+    font-family:sheep; /* 사용할 서체 이름을 지정 */
+    src:url("../fonts/sheep sans.eot"); /* 웹폰트 경로를 지정하여 가지고 옮 */
+    src:local(''), url("../fonts/sheep sans.woff") format("woff");
+}
+
+@font-face {
+    font-family:myriad;
+    src:url("../fonts/Myriad-Pro.eot");
+    src:local(''), url("../fonts/Myriad-Pro.woff") format('woff');
+}
+
+
+* {
+    margin:0; /* 박스 바깥쪽 여백 */
+    padding:0; /* 박스와 콘텐츠 사이의 여백 */
+    box-sizing:border-box; /* 박스의 너비값과 높이값에 패딩과 보더의 크기를 포함 */
+}
+ul li, ol li {
+    float:left; /* 박스를 좌에서 우로 배치 */
+    list-style:none;    
+}
+a {
+    display:block; /* 블록형 박스로 변경 */
+    text-decoration:none; /* 언더바 제거 */
+}
+.clear {
+    clear:both;
+}
+
+
+body {
+    font-family:sheep, sans-serif;
+    font-size:16px;
+    color:#333;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

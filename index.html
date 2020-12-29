@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to PAGPAN Restaurant</title>
+    <link rel="shortcut icon" href="imgs/favicon.ico">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!--
+    제이쿼리는 "자바스크립트 라이브러리(API)이다.
+    1. 제이쿼리 엔진(라이브러리)을 웹 문서에 포함 시킨다.
+        www.jquery.com > CDN(Content Delivery Network) 방식으로 웹 문서에 포함 시키는데, 스크립트 태그 최상위에서 포함시킨다.
+    2. 구조에 있는 요소(시작태그+웹 콘텐츠+끝태그)를 선택해서 스크립트 영역으로 가져온다.
+        a. 자바스크립트: getElementById('id속성값')
+        b. 제이쿼리: $('선택자') / $('.sub-menu') = jquery( )
+    3. 제이쿼리는 '이벤트', '이벤트 연결 메서드', '이벤트 효과 메서드' 로 이루어져 있다.
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.flexslider-min.js"></script>
+    <script>
+        // $(document).ready( ) : 웹 문서를 모두 해석했으면...
+        // function( ) { } : 익명 함수 > 메서드의 매개변수 리스트에 작성, 무조건 실행한다.
+        $(document).ready(function( ) {
+            // click( ): 이벤트 연결 메서드(이벤트와 이벤트 효과 메서드 사이에서 연결하는 역할을 한다.)
+            // $(this): 메인메뉴가 모두 6개 중 마우스 오버한 메인메뉴만  서브 메뉴를 보여줘야 한다. 따라서 마우스 오버한 메인메뉴 하나를 선택해야 하므로 사용했다.
+            // find('선택자'): 선택자로 선택한 요소를 찾는다. > 필터 메서드
+            // stop( ): 애니메이션 효과(이벤트 효과 메서드)를 모두 멈춘다.
+            // slideDown( ): 아래로 슬라이드 효과를 내며 요소를 움직이는 이벤트 효과 메서드
+            $('#main-menu li').mouseover(function( ) {
+                $(this).find('.sub-menu').stop( ).slideDown( );
+            });
+            $('#main-menu li').mouseleave(function( ) {
+                $(this).find('.sub-menu').stop( ).slideUp( );
+            });
+            
+            $('.flexslider').flexslider({ animation:'slide' }); /* fade */
+        });
+    </script>
+</head>
+    
+<body>
+    <div class="wrap">
+        <header>
+            <img src="imgs/logo.png" alt="파그판 로고" class="logo">
+            <ul class="topmenu">
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">사이트맵</a></li>
+            </ul>
+        </header>
+        <div class="clear"></div>
+        
+        <nav>
+            <ul id="main-menu">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a>
+                    <ul class="sub-menu">
+                        <li><a href="welcome.html">welcome</a></li>
+                        <li><a href="#">history</a></li>
+                        <li><a href="#">location</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">MENU</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">korean&nbsp;&nbsp;food</a></li>
+                        <li><a href="#">china&nbsp;&nbsp;food</a></li>
+                        <li><a href="#">japan&nbsp;&nbsp;food</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">WHERE WE ARE</a></li>
+                <li><a href="#">TODAY’S RECIPES</a></li>
+                <li><a href="#">BLOG</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">naver&nbsp;&nbsp;blog</a></li>
+                        <li><a href="#">daum&nbsp;&nbsp;blog</a></li>                        
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="clear"></div>
+                
+        <section>
+            <div class="flexslider">
+                <ul class="slides">
+                    <li><a href="welcome.html"><img src="imgs/sc-slide01.jpg" alt="롤링케이크"></a></li>
+                    <li><img src="imgs/sc-slide02.jpg" alt="스테이크"></li>
+                    <li><img src="imgs/sc-slide03.jpg" alt="호박요리"></li>
+                </ul>
+            </div>
+            
+            <div class="welcome">
+                <h2>Welcome to pagpan Restaurant & Lounge Bar</h2>
+                <p>Chic and contemporary with a modern British menu, Twelve Restaurant & Lounge Bar is located on the Lancashire coast at Marsh Mill Village in Thornton Cleveleys.</p>
+            </div>
+            
+            <article>
+                <h3>Find pagpan near you!</h3>
+                <img src="imgs/map.jpg" alt="지도">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+            </article>
+            <article>
+                <h3>Celebrate your special day!</h3>
+                <img src="imgs/cheer.jpg" alt="응원">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+            </article>
+            <article>
+                <h3>Special benet with credit cards!</h3>
+                <img src="imgs/card.jpg" alt="카드">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis nunc eget elit porta tristique. Proin suscipit ornare lectus, nec consectetur orci bibendum eget.</p>
+            </article>
+        </section>
+        <div class="clear"></div>
+    
+        <footer>
+            <p>P.O. Box 4483 | Califonia USA | Tel: +1 2 333 3789 | Fax: +1 2 333 4789 | E-mail: webmaster@pagpanrestaurant.com<br>
+Copyright 2011  pagpan Restaurant & Bar  All Rights Reserved. </p>
+            <ul class="sns">
+                <li><a href="#"><img src="imgs/ft-rss.jpg" alt="RSS"></a></li>
+                <li><a href="#"><img src="imgs/ft-tw.jpg" alt="Twitter"></a></li>
+                <li><a href="#"><img src="imgs/ft-fb.jpg" alt="Facebook"></a></li>
+            </ul>
+        </footer>
+    </div>    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
